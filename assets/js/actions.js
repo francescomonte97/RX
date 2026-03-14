@@ -1,8 +1,34 @@
 import { CONFIG } from "./config.js";
 
+function slugify(value = "") {
+  return String(value)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/['’`]/g, "")
+    .replace(/[^\w\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-");
+}
+
+function getProjectBase() {
+  const segments = window.location.pathname.split("/").filter(Boolean);
+  return segments.length > 0 ? `/${segments[0]}` : "";
+}
+
+function buildShareUrl(card) {
+  if (card.shareUrl) return card.shareUrl;
+
+  const origin = window.location.origin;
+  const projectBase = getProjectBase();
+  const slug = card.slug || slugify(card.name);
+
+  return `${origin}${projectBase}/r/${slug}.html`;
+}
+
 export async function downloadImage(card) {
   const source = card.resolvedImage || card.image;
-  const fileName = `${card.slug || card.name.toLowerCase().replace(/\s+/g, "-")}.jpg`;
+  const fileName = `${card.slug || slugify(card.name)}.jpg`;
 
   try {
     const response = await fetch(source, { mode: "cors" });
@@ -26,8 +52,12 @@ export async function downloadImage(card) {
 
 export async function shareCard(card) {
   const text = `Guarda questa reaction: ${card.name}`;
-  const url = card.shareUrl || `${CONFIG.appBaseShareUrl}/${card.slug}`;
-  const shareData = { title: card.name, text, url };
+  const url = buildShareUrl(card);
+  const shareData = {
+    title: `${card.name} • Reactiondex`,
+    text,
+    url
+  };
 
   if (navigator.share) {
     try {
@@ -38,7 +68,12 @@ export async function shareCard(card) {
     }
   }
 
-  const whatsappUrl = `${CONFIG.whatsappBase}${encodeURIComponent(`${text} ${url}`)}`;
-  window.open(whatsappUrl, "_blank");
-  return { ok: true, message: "Condivisione WhatsApp" };
+  try {
+    await navigator.clipboard.writeText(url);
+    return { ok: true, message: "Link copiato negli appunti" };
+  } catch {
+    const whatsappUrl = `${CONFIG.whatsappBase}${encodeURIComponent(`${text} ${url}`)}`;
+    window.open(whatsappUrl, "_blank");
+    return { ok: true, message: "Condivisione WhatsApp" };
+  }
 }

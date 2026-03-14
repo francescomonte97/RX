@@ -1,16 +1,13 @@
 export const CONFIG = {
   reactionJsonPath: "./reaction.json",
-  githubRawBase: "https://raw.githubusercontent.com/TUO-USERNAME/TUO-REPO/main/reaction",
+  githubRawBase: "",
   whatsappBase: "https://wa.me/?text=",
-  appBaseShareUrl: "https://tuodominio.it/reactions",
+  appBaseShareUrl: "https://francescomonte97.github.io/RX/r",
 
   image: {
     fallbackFile: "placeholder.jpg",
     candidateBases: [
-      "./reaction",
-      "../reaction",
-      "../../reaction",
-      "../../../reaction"
+      "https://francescomonte97.github.io/RX/reaction"
     ]
   },
 

@@ -4,6 +4,7 @@ const cache = new Map();
 
 function buildCandidates(card) {
   const candidates = [];
+  const exts = ["webp", "jpg", "png"];
 
   if (card.image) {
     candidates.push(card.image);
@@ -21,15 +22,15 @@ function buildCandidates(card) {
 
   if (card.slug) {
     CONFIG.image.candidateBases.forEach((base) => {
-      candidates.push(`${base}/${card.slug}.jpg`);
-      candidates.push(`${base}/${card.slug}.png`);
-      candidates.push(`${base}/${card.slug}.webp`);
+      exts.forEach((ext) => {
+        candidates.push(`${base}/${card.slug}.${ext}`);
+      });
     });
 
     if (CONFIG.githubRawBase) {
-      candidates.push(`${CONFIG.githubRawBase}/${card.slug}.jpg`);
-      candidates.push(`${CONFIG.githubRawBase}/${card.slug}.png`);
-      candidates.push(`${CONFIG.githubRawBase}/${card.slug}.webp`);
+      exts.forEach((ext) => {
+        candidates.push(`${CONFIG.githubRawBase}/${card.slug}.${ext}`);
+      });
     }
   }
 
@@ -39,14 +40,27 @@ function buildCandidates(card) {
 function testImage(url) {
   return new Promise((resolve) => {
     const img = new Image();
+
     img.onload = () => resolve(true);
     img.onerror = () => resolve(false);
+
+    img.decoding = "async";
     img.src = url;
   });
 }
 
+function buildFallbackUrl() {
+  const base = CONFIG.image.candidateBases?.[0] || "";
+  return `${base}/${CONFIG.image.fallbackFile}`;
+}
+
 export async function resolveImage(card) {
-  const cacheKey = `${card.id}-${card.image || ""}-${card.imageFile || ""}-${card.slug || ""}`;
+  const cacheKey = [
+    card.id,
+    card.image || "",
+    card.imageFile || "",
+    card.slug || ""
+  ].join("|");
 
   if (cache.has(cacheKey)) {
     return cache.get(cacheKey);
@@ -62,7 +76,7 @@ export async function resolveImage(card) {
     }
   }
 
-  const fallback = `${CONFIG.image.candidateBases[0]}/${CONFIG.image.fallbackFile}`;
+  const fallback = buildFallbackUrl();
   cache.set(cacheKey, fallback);
   return fallback;
 }
