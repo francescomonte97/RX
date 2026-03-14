@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Reactiondex V2</title>
+
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Reactiondex V2" />
+
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-ui">
+      <div class="top-row">
+        <div class="brand-block">
+          <div class="logo">Reaction<span>DEX</span></div>
+          <div class="logo-sub">2020-2026</div>
+        </div>
+
+        <div class="top-actions">
+          <span class="build-inline">Build V2</span>
+        </div>
+      </div>
+
+      <div class="search-panel" id="searchShell">
+        <div class="search-main-row">
+          <div class="search-input-wrap">
+            <span class="search-icon">⌕</span>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Cerca per descrizione..."
+              autocomplete="off"
+            />
+          </div>
+
+          <button class="mode-toggle-btn" id="semanticToggleBtn" type="button" aria-pressed="false">
+            <span class="mode-toggle-indicator"></span>
+            <span class="mode-toggle-text"></span>
+          </button>
+        </div>
+
+        <div class="search-sub-row"></div>
+
+        <div class="search-action-row" id="searchActionRow">
+          <button class="search-run-btn" id="runSemanticSearchBtn" type="button">Analizza</button>
+          <div class="search-loader" id="searchLoader" aria-hidden="true">
+            <span class="loader-spinner"></span>
+          </div>
+        </div>
+
+        <div class="search-ticker" id="searchTicker" aria-hidden="true">
+          <div class="search-ticker-count" id="searchTickerCount">0</div>
+          <div class="search-ticker-viewport">
+            <div class="search-ticker-track" id="searchTickerTrack"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="toolbar-strip">
+        <button class="tool-btn tool-btn-main" id="tuningTrigger" type="button">
+          <span class="tool-ic">◈</span>
+          <span class="tool-txt" id="tuningLabel">Filtri RX</span>
+          <span class="tool-counter" id="filterCount">0</span>
+        </button>
+
+        <button class="tool-btn" id="favoritesToggleBtn" type="button">
+          <span class="tool-ic hotlist-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.8c.9 2.2 2.7 3.7 4.6 5.3 1.7 1.4 2.9 3 2.9 5.4 0 4.3-3.2 7.2-7.5 7.2S4.5 17.8 4.5 13.5c0-2.7 1.6-4.5 3.5-6.2 1.7-1.6 3-2.9 4-4.5Z"/>
+              <path d="M12 12.2c.7 1 1.8 1.7 2.4 2.8.5.8.6 1.5.6 2.1 0 1.8-1.3 3-3 3s-3-1.2-3-3c0-.9.4-1.8 1.1-2.6.6-.7 1.2-1.3 1.9-2.3Z"/>
+            </svg>
+          </span>
+          <span class="tool-txt">Hotlist</span>
+          <span class="tool-counter" id="favoritesCount">0</span>
+        </button>
+
+        <button class="tool-btn tool-btn-ghost" id="resetBtn" type="button">
+          <span class="tool-ic">↺</span>
+          <span class="tool-txt">Reset</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="results-head">
+      <div class="grid-header">
+        <span id="count">0</span>
+        <span>MATCH REACTION TROVATI</span>
+      </div>
+
+      <div class="active-filters-preview" id="activeFiltersPreview"></div>
+    </div>
+
+    <div class="hotlist-ai-panel" id="hotlistAiPanel">
+      <button id="analyzeHotlistBtn" type="button">
+        Scopri la tua RX Identity
+      </button>
+    </div>
+
+    <div id="reactionGrid" class="reaction-grid"></div>
+  </main>
+
+  <div class="modal-overlay" id="tuningModal">
+    <div class="modal-pane">
+      <div class="dragger"></div>
+
+      <div class="pane-header">
+        <div class="pane-title-wrap">
+          <h2>Filtri RX</h2>
+          
+        </div>
+
+        <div class="pane-meta">
+          <span class="pane-meta-label"></span>
+          <span class="pane-meta-count" id="paneMetaCount">0</span>
+        </div>
+      </div>
+
+      <div class="modal-content-scroll">
+        <div class="section">
+          <span class="section-title">Origine</span>
+          <div class="opt-grid opt-grid-2">
+            <button class="opt-box" type="button" data-type="imageSource" data-value="real">Real</button>
+            <button class="opt-box" type="button" data-type="imageSource" data-value="ai">AI</button>
+          </div>
+        </div>
+
+        <div class="section">
+          <span class="section-title">Creator</span>
+          <div class="opt-grid opt-grid-2 opt-grid-creator">
+            <button class="opt-box" type="button" data-type="creator" data-value="Min">Min</button>
+            <button class="opt-box" type="button" data-type="creator" data-value="Lussu">Lussu</button>
+            <button class="opt-box" type="button" data-type="creator" data-value="Fez">Fez</button>
+            <button class="opt-box" type="button" data-type="creator" data-value="Tommi">Tommi</button>
+            <button class="opt-box" type="button" data-type="creator" data-value="Frec">Frec</button>
+            
+            <button class="opt-box" type="button" data-type="creator" data-value="Lipu">Lipu</button>
+            <button class="opt-box" type="button" data-type="creator" data-value="__others__">Altri creator</button>
+          </div>
+        </div>
+
+        <div class="section">
+          <span class="section-title">Generazione</span>
+          <div class="opt-grid opt-grid-3">
+            <button class="opt-box" type="button" data-type="gen" data-value="GEN 1">GEN 1</button>
+            <button class="opt-box" type="button" data-type="gen" data-value="GEN 2">GEN 2</button>
+            <button class="opt-box" type="button" data-type="gen" data-value="GEN 3">GEN 3</button>
+            
+            <button class="opt-box" type="button" data-type="gen" data-value="GEN 3 HE">GEN 3 <br /> <i style="color: greenyellow;">Halloween edition</i></button>
+            
+             <button class="opt-box" type="button" data-type="gen" data-value="GEN 4">GEN 4</button>
+             
+             
+             <button class="opt-box" type="button" data-type="gen" data-value="GEN 5">GEN 5</button>
+            
+            
+            
+          </div>
+        </div>
+
+        <div class="section">
+          <span class="section-title">Rarità</span>
+          <div class="opt-grid opt-grid-2">
+            <button class="opt-box" type="button" data-type="rarity" data-value="Comune">Comune</button>
+            <button class="opt-box" type="button" data-type="rarity" data-value="Non Comune">Non Comune</button>
+            <button class="opt-box" type="button" data-type="rarity" data-value="Rara">Rara</button>
+            <button class="opt-box" type="button" data-type="rarity" data-value="Epica">Epica</button>
+            <button class="opt-box" type="button" data-type="rarity" data-value="Leggendaria">Leggendaria</button>
+          </div>
+        </div>
+
+        <div class="section">
+          <span class="section-title">Anno</span>
+          <div class="opt-grid opt-grid-3">
+            <button class="opt-box" type="button" data-type="year" data-value="2023">2023</button>
+            <button class="opt-box" type="button" data-type="year" data-value="2024">2024</button>
+            <button class="opt-box" type="button" data-type="year" data-value="2025">2025</button>
+          </div>
+        </div>
+
+        <div class="section">
+          <span class="section-title">Mese</span>
+          <div class="opt-grid opt-grid-3">
+            <button class="opt-box" type="button" data-type="month" data-value="Gennaio">Gen</button>
+            <button class="opt-box" type="button" data-type="month" data-value="Febbraio">Feb</button>
+            <button class="opt-box" type="button" data-type="month" data-value="Marzo">Mar</button>
+            <button class="opt-box" type="button" data-type="month" data-value="Ottobre">Ott</button>
+            <button class="opt-box" type="button" data-type="month" data-value="Dicembre">Dic</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pane-actions-wrap">
+        <div class="pane-actions-meta" id="paneActionsMeta">Nessun filtro attivo</div>
+
+        <div class="pane-actions">
+          <button class="secondary-btn" id="resetFiltersBtn" type="button">Resetta</button>
+          <button class="apply-btn" id="applyFiltersBtn" type="button">Applica</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="install-prompt-overlay" id="installPromptOverlay" aria-hidden="true">
+    <div class="install-prompt-card">
+      <div class="install-prompt-topline">Reactiondex V2</div>
+      <h3>Installa l’app</h3>
+      <p>Per un’esperienza più fluida puoi installare Reactiondex sulla schermata home del tuo dispositivo.</p>
+
+      <div class="install-prompt-actions">
+        <button class="install-prompt-secondary" id="dismissInstallPromptBtn" type="button">Più tardi</button>
+        <button class="install-prompt-primary" id="confirmInstallPromptBtn" type="button">Installa</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="rx-insight-overlay" id="rxInsightOverlay" aria-hidden="true">
+    <div class="rx-insight-card">
+    
+
+      <div class="rx-insight-loading" id="rxInsightLoading">
+        <div class="rx-insight-loader-bar">
+          <span class="rx-insight-loader-fill"></span>
+        </div>
+        <div class="rx-insight-loading-copy" id="rxInsightLoadingCopy">
+          Sto leggendo il tuo caos interiore RX...
+        </div>
+      </div>
+
+      <div class="rx-insight-result" id="rxInsightResult" hidden>
+        <div class="rx-insight-header rx-insight-header-single">
+          <div class="rx-insight-heading-wrap">
+        
+            <h3 id="rxInsightTitle">Drama Sniper</h3>
+          </div>
+
+          <button class="rx-insight-close" id="closeRxInsightBtn" type="button" aria-label="Chiudi">✕</button>
+        </div>
+
+        <div class="rx-insight-body-single">
+          <p class="rx-insight-paragraph rx-insight-paragraph-main" id="rxInsightProfile">—</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./assets/js/app.js"></script>
+</body>
+</html>

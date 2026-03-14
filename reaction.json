@@ -1,0 +1,134 @@
+[
+  
+  {
+  "id": 1,
+  "slug": "salumieri-reaction",
+  "name": "Salumieri reaction",
+  "creators": ["Min", "Lussu", "Fez", "Tommi"],
+  "imageSource": "ai",
+  "imageFile": "salumieri-reaction.webp",
+  "year": "2025",
+  "month": "Ottobre",
+  "gen": "GEN 1",
+  "rarity": "Non Comune",
+  "shareUrl": "https://tuodominio.it/reactions/eclissi-totale",
+  "hiddenTags": ["Prosciutto", "Macelleria", "Situazione strana", "Momento Comico", "Gruppo di persone", "Macellai"],
+  "weightedTags": [
+    { "tag": "Prosciutto", "weight": 10 },
+    { "tag": "Situazione strana", "weight": 9 },
+    { "tag": "Momento Comico", "weight": 8 },
+    { "tag": "Gruppo di persone", "weight": 7 },
+    { "tag": "Macellai", "weight": 10 }
+  ],
+  "phrases": ["non ci posso credere", "ma cosa sta succedendo", "prosciutto cotto"],
+  "synonyms": ["Carne", "allucinante", "Salumi", "Affettati"],
+  "moods": ["Coinvolgente", "Comico", "Paradossale"],
+  "contexts": ["Macelleria", "Lavoro", "Scena comica"]
+},
+
+{
+  "id": 2,
+  "slug": "merio-reaction",
+  "name": "Merio reaction",
+  "creators": ["Frec"],
+  "imageSource": "real",
+  "imageFile": "merio-reaction.webp",
+  "year": "2020",
+  "month": "Aprile",
+  "gen": "GEN 1",
+  "rarity": "Rara",
+  "shareUrl": "https://tuodominio.it/reactions/eclissi-totale",
+  "hiddenTags": ["Cuffiette", "Auricolari", "Puntare il dito", "Lampadario", "Sguardo"],
+  "weightedTags": [
+    { "tag": "Cuffiette", "weight": 9 },
+    { "tag": "Auricolari", "weight": 9},
+    { "tag": "Puntare il dito", "weight": 10 },
+      { "tag": "Lampadario", "weight": 8 },
+      { "tag": "Sguardo", "weight": 7 },
+      { "tag": "Uomo", "weight": 3 },
+      { "tag": "Capelli corti castani", "weight": 5}
+  ],
+  "phrases": [],
+  "synonyms": [],
+  "moods": ["Scherzoso", "Comico"],
+  "contexts": ["casa", "scena", "selfie"]
+}
+  
+  ,
+  {
+  "id": 3,
+  "slug": "duro-reaction",
+  "name": "Duro reaction",
+  "creators": ["Lussu"],
+  "imageSource": "real",
+  "imageFile": "duro-reaction.webp",
+  "year": "2020",
+  "month": "Ottobre",
+  "gen": "GEN 1",
+  "rarity": "Epica",
+  "shareUrl": "https://tuodominio.it/reactions/eclissi-totale",
+  "hiddenTags": ["hot", "momento intenso", "strano"],
+  "weightedTags": [
+    { "tag": "hot", "weight": 6 },
+    { "tag": "momento intenso", "weight": 7},
+    { "tag": "strano", "weight": 5}
+  ],
+  "phrases": ["non ci posso credere", "ma cosa sta succedendo", "situazione assurda", "momento folle", "omo", "nuove esperienze"],
+  "synonyms": ["incredulita", "allucinante", "irreale", "impossibile"],
+  "moods": ["impegnato", "voglia", "basito"],
+  "contexts": ["saint vincent", "casa", "scena", "montagna", "provino"]
+}
+    ,
+    {
+      "id": 4,
+      "slug": "onlove-reaction",
+      "name": "OnLove reaction",
+      "creators": ["Fez", "Lipu"],
+      "imageSource": "ai",
+      "imageFile": "onlove-reaction.webp",
+      "year": "2024",
+      "month": "Gennaio",
+      "gen": "GEN 4",
+      "rarity": "Rara",
+      "shareUrl": "https://tuodominio.it/reactions/eclissi-totale",
+      "hiddenTags": ["hot", "momento intenso", "strano"],
+      "weightedTags": [
+        { "tag": "hot", "weight": 6 },
+        { "tag": "momento intenso", "weight": 7 },
+        { "tag": "strano", "weight": 5 }
+      ],
+      "phrases": ["non ci posso credere", "ma cosa sta succedendo", "situazione assurda", "momento folle", "omo", "nuove esperienze"],
+      "synonyms": ["incredulita", "allucinante", "irreale", "impossibile"],
+      "moods": ["impegnato", "voglia", "basito"],
+      "contexts": ["saint vincent", "casa", "scena", "montagna", "provino"]
+    }
+
+    ,
+    {
+      "id": 4,
+      "slug": "lipgallagher-reaction",
+      "name": "Lip Gallagher reaction",
+      "creators": ["Lipu"],
+      "imageSource": "ai",
+      "imageFile": "lipgallagher-reaction.jpg",
+      "year": "2023",
+      "month": "Ottobre",
+      "gen": "GEN 3 HE",
+      "rarity": "Epica",
+      "shareUrl": "https://tuodominio.it/reactions/eclissi-totale",
+      "hiddenTags": ["hot", "momento intenso", "strano"],
+      "weightedTags": [
+        { "tag": "hot", "weight": 6 },
+        { "tag": "momento intenso", "weight": 7 },
+        { "tag": "strano", "weight": 5 }
+      ],
+      "phrases": ["non ci posso credere", "ma cosa sta succedendo", "situazione assurda", "momento folle", "omo", "nuove esperienze"],
+      "synonyms": ["incredulita", "allucinante", "irreale", "impossibile"],
+      "moods": ["impegnato", "voglia", "basito"],
+      "contexts": ["saint vincent", "casa", "scena", "montagna", "provino"]
+    }
+
+
+
+
+]
