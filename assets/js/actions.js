@@ -17,15 +17,12 @@ function getProjectBase() {
 }
 
 function buildShareUrl(card) {
-  if (card.shareUrl) return card.shareUrl;
-
   const origin = window.location.origin;
   const projectBase = getProjectBase();
   const slug = card.slug || slugify(card.name);
 
   return `${origin}${projectBase}/r/${slug}.html`;
 }
-
 export async function downloadImage(card) {
   const source = card.resolvedImage || card.image;
   const fileName = `${card.slug || slugify(card.name)}.jpg`;
