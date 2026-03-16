@@ -6004,3 +6004,10 @@ opacity:.9;
   transform: translateY(0) scale(1);
   opacity: 1;
 }
+
+.modal-pane {
+  transform: translateY(0);
+  will-change: transform;
+  transition: transform 0.24s ease;
+}
+
