@@ -1,4 +1,4 @@
-const CACHE_NAME = "rxdex-core-v1";
+const CACHE_NAME = "ReactiondexV2";
 const ASSETS = [
   "./",
   "./index.html",
