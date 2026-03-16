@@ -1,7 +1,7 @@
 {
-  "name": "RX-DEX CORE",
-  "short_name": "RXCORE",
-  "description": "Collector interface per reaction cards",
+  "name": "Reactiondex",
+  "short_name": "RX",
+  "description": "Reactiondex è il database ufficiale delle Reaction",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -9,11 +9,7 @@
   "theme_color": "#050505",
   "orientation": "portrait",
   "icons": [
-    {
-      "src": "./icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
+    
     {
       "src": "./icons/icon-512.png",
       "sizes": "512x512",
