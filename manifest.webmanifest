@@ -1,6 +1,6 @@
 {
   "name": "Reactiondex",
-  "short_name": "RX",
+  "short_name": "Reactiondex",
   "description": "Reactiondex è il database ufficiale delle Reaction",
   "start_url": "./",
   "scope": "./",
