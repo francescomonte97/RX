@@ -156,7 +156,6 @@ function buildLocalHotlistIdentity(hotlist = []) {
 
   return {
     source: "local",
-    archetype,
     identity_text:
       `Guardando la tua Hotlist si capisce subito che tu non perdi tempo con reaction educate o troppo composte. ` +
       `Tu vuoi facce che crollano bene, scene che si inclinano male e quell'energia da "${moodText}" che arriva quando ${contextText} prende il sopravvento. ` +
