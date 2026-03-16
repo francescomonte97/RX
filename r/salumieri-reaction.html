@@ -1,93 +1,306 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salumieri reaction • Reactiondex</title>
 
-<title>Salumieri reaction • Reactiondex</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Salumieri reaction • Reactiondex" />
+  <meta property="og:description" content="Una reaction da prosciutto mentale, caos organizzato e momento comico puro." />
+  <meta property="og:image" content="https://francescomonte97.github.io/RX/reaction/salumieri-reaction.webp" />
+  <meta property="og:url" content="https://francescomonte97.github.io/RX/r/salumieri-reaction.html" />
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Salumieri reaction • Reactiondex">
-<meta property="og:description" content="Panino cotto e salame • Macelleria Moretto">
-<meta property="og:image" content="https://francescomonte97.github.io/RX/reaction/salumieri-reaction.webp">
-<meta property="og:url" content="https://francescomonte97.github.io/RX/r/salumieri-reaction.html">
+  <meta name="twitter:card" content="summary_large_image" />
 
-<meta name="twitter:card" content="summary_large_image">
+  <style>
+    :root{
+      --bg:#07070a;
+      --panel:#111118;
+      --panel-2:#171720;
+      --text:#f4f4f6;
+      --muted:rgba(255,255,255,.62);
+      --line:rgba(255,255,255,.08);
+      --accent:#ff5f7a;
+      --accent-2:#ff9f5a;
+      --shadow:0 24px 80px rgba(0,0,0,.45);
+    }
 
-<style>
+    *{box-sizing:border-box}
 
-body{
-  margin:0;
-  background:#0b0b0f;
-  font-family:system-ui;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:100vh;
-}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(255,90,140,.14), transparent 28%),
+        radial-gradient(circle at bottom, rgba(255,170,80,.08), transparent 32%),
+        linear-gradient(180deg, #0a0a0e, #060608 75%);
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
 
-.wrap{
-  max-width:420px;
-  padding:20px;
-  text-align:center;
-}
+    .page{
+      width:min(100%, 460px);
+    }
 
-img{
-  width:100%;
-  border-radius:18px;
-}
+    .card{
+      position:relative;
+      overflow:hidden;
+      border-radius:28px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02)),
+        var(--panel);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+    }
 
-h1{
-  font-size:26px;
-  margin:16px 0 8px;
-}
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(130deg, rgba(255,255,255,.05), transparent 28%),
+        radial-gradient(circle at 80% 0%, rgba(255,140,80,.10), transparent 22%);
+    }
 
-.creators{
-  opacity:.7;
-  margin-bottom:18px;
-}
+    .hero-wrap{
+      position:relative;
+      padding:14px 14px 0;
+    }
 
-.btn{
-  display:block;
-  width:100%;
-  padding:14px;
-  border-radius:12px;
-  background:#ff2e6a;
-  color:white;
-  text-decoration:none;
-  font-weight:700;
-  margin-top:10px;
-}
+    .hero{
+      width:100%;
+      aspect-ratio:1/1;
+      object-fit:cover;
+      border-radius:22px;
+      display:block;
+      box-shadow:0 12px 34px rgba(0,0,0,.28);
+    }
 
-.btn.secondary{
-  background:#222;
-}
+    .hero-badge{
+      position:absolute;
+      top:28px;
+      left:28px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      min-height:30px;
+      padding:0 12px;
+      border-radius:999px;
+      background:rgba(8,8,12,.54);
+      border:1px solid rgba(255,255,255,.12);
+      color:#fff;
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
 
-</style>
+    .content{
+      padding:18px 18px 20px;
+    }
+
+    .eyebrow{
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.46);
+      margin-bottom:10px;
+    }
+
+    h1{
+      margin:0;
+      font-size:32px;
+      line-height:.95;
+      letter-spacing:-.05em;
+      font-weight:950;
+      text-wrap:balance;
+    }
+
+    .meta{
+      margin-top:12px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+    }
+
+    .desc{
+      margin-top:16px;
+      color:rgba(255,255,255,.84);
+      font-size:15px;
+      line-height:1.65;
+    }
+
+    .tags{
+      margin-top:16px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .tag{
+      min-height:30px;
+      display:inline-flex;
+      align-items:center;
+      padding:0 11px;
+      border-radius:999px;
+      background:rgba(255,255,255,.045);
+      border:1px solid rgba(255,255,255,.08);
+      color:rgba(255,255,255,.78);
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.03em;
+    }
+
+    .actions{
+      margin-top:22px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .cta{
+      position:relative;
+      min-height:52px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#fff;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,.12), transparent 55%),
+        linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.16),
+        0 16px 36px rgba(255,95,122,.22);
+      transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+    }
+
+    .cta::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255,255,255,.18) 18%,
+        transparent 38%
+      );
+      transform:translateX(-140%);
+      animation:ctaSweep 2.8s ease-in-out infinite;
+    }
+
+    .cta:hover{
+      transform:translateY(-1px);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.18),
+        0 18px 42px rgba(255,95,122,.28);
+    }
+
+    .cta:active{
+      transform:translateY(0);
+      filter:brightness(.98);
+    }
+
+    .secondary{
+      min-height:46px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:rgba(255,255,255,.82);
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.04em;
+      transition:transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+
+    .secondary:hover{
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.12);
+    }
+
+    .footer-note{
+      margin-top:14px;
+      text-align:center;
+      font-size:11px;
+      line-height:1.45;
+      color:rgba(255,255,255,.40);
+    }
+
+    @keyframes ctaSweep{
+      0%, 15%{ transform:translateX(-140%); }
+      45%, 100%{ transform:translateX(140%); }
+    }
+
+    @media (max-width:520px){
+      body{ padding:16px; }
+      .content{ padding:16px 16px 18px; }
+      h1{ font-size:28px; }
+      .desc{ font-size:14px; }
+    }
+  </style>
 </head>
-
 <body>
+  <main class="page">
+    <article class="card">
+      <div class="hero-wrap">
+        <img
+          class="hero"
+          src="https://francescomonte97.github.io/RX/reaction/salumieri-reaction.webp"
+          alt="Salumieri reaction"
+        />
+        <div class="hero-badge">Reaction Preview</div>
+      </div>
 
-<div class="wrap">
+      <div class="content">
+        <div class="eyebrow">Reactiondex Drop</div>
+        <h1>Salumieri reaction</h1>
 
-<img src="../reaction/salumieri-reaction.webp">
+        <div class="meta">Min • Lussu • Fez • Tommi · AI · GEN 1 · Non Comune</div>
 
-<h1>Salumieri reaction</h1>
+        <p class="desc">
+        Non adatta ai vegani! 
+        </p>
 
-<div class="creators">
-Min • Lussu • Fez • Tommi
-</div>
+        <div class="tags">
+          <span class="tag">Macelleria</span>
+          <span class="tag">Momento comico</span>
+          <span class="tag">Situazione strana</span>
+        </div>
 
-<a class="btn" download href="../reaction/salumieri-reaction.webp">
-Scarica reaction
-</a>
+        <div class="actions">
+          <a class="cta" href="https://francescomonte97.github.io/RX/?rx=salumieri-reaction">
+            Entra nel Reactiondex
+          </a>
 
-<a class="btn secondary" href="../?rx=salumieri-reaction">
-  Vai al Reactiondex
-</a>
+          <a class="secondary" href="https://francescomonte97.github.io/RX/reaction/salumieri-reaction.webp" download>
+            Scarica reaction
+          </a>
+        </div>
 
-</div>
-
+        
+      </div>
+    </article>
+  </main>
 </body>
-</html>
+                                               </html>
