@@ -12,25 +12,28 @@
 "gen": "GEN 1",
 "rarity": "Popolare",
 "shareUrl": "https://francescomonte97.github.io/RX/r/salumieri-reaction.html",
-"hiddenTags": ["Prosciutto", "Macelleria", "Situazione strana", "Momento Comico", "Gruppo di persone", "Macellai"],
+"hiddenTags": ["Prosciutto", "Macelleria", "Situazione strana", "Momento Comico", "Gruppo di persone", "Macellai", "divertente", "spensieratezza"],
 "weightedTags": [
 { "tag": "Prosciutto", "weight": 10 },
 { "tag": "Situazione strana", "weight": 9 },
 { "tag": "Momento Comico", "weight": 8 },
 { "tag": "Gruppo di persone", "weight": 7 },
-{ "tag": "Macellai", "weight": 10 }
+{ "tag": "Macellai", "weight": 10 },
+{ "tag": "grembiule", "weight": 10 },
+{ "tag": "divertente", "weight": 7 },
+{ "tag": "spensieratezza", "weight": 5 }
 ],
 "phrases": ["non ci posso credere", "ma cosa sta succedendo", "prosciutto cotto"],
 "synonyms": ["Carne", "allucinante", "Salumi", "Affettati"],
 "moods": ["Coinvolgente", "Comico", "Paradossale"],
-"contexts": ["Macelleria", "Lavoro", "Scena comica"]
+"contexts": ["Macelleria", "Lavoro", "Scena comica", "🥓","🍖"]
 },
 
 {
 "id": 2,
 "slug": "merio-reaction",
 "name": "Merio reaction",
-"categories": ["Personaggio", "Comica"],
+"categories": ["Meme", "Comica"],
 "creators": ["Frec"],
 "imageSource": "real",
 "imageFile": "merio-reaction.webp",
@@ -52,7 +55,7 @@
 "phrases": [],
 "synonyms": [],
 "moods": ["Scherzoso", "Comico"],
-"contexts": ["casa", "scena", "selfie"]
+"contexts": ["casa", "Selfie" ,"👉🏻", "👀"]
 },
 
 {
@@ -77,7 +80,7 @@
 "phrases": ["non ci posso credere", "ma cosa sta succedendo"],
 "synonyms": ["incredulita", "allucinante"],
 "moods": ["impegnato", "voglia", "basito"],
-"contexts": ["saint vincent", "casa"]
+"contexts": ["saint vincent", "casa", "🧹","✊🏻"]
 },
 
 {
@@ -91,41 +94,44 @@
 "year": "2024",
 "month": "Gennaio",
 "gen": "GEN 4",
-"rarity": "Popolare",
+"rarity": "Iconica",
 "shareUrl": "https://tuodominio.it/reactions/eclissi-totale",
-"hiddenTags": ["hot", "momento intenso"],
+"hiddenTags": ["hot", "momento intenso", "giacca", "eleganza"],
 "weightedTags": [
-{ "tag": "hot", "weight": 6 },
-{ "tag": "momento intenso", "weight": 7 }
+{ "tag": "hot", "weight": 4 },
+{ "tag": "momento intenso", "weight": 7 },
+{ "tag": "eleganza", "weight": 10 },
+{ "tag": "giacca", "weight": 7 }
 ],
-"phrases": ["situazione assurda"],
-"synonyms": ["allucinante"],
-"moods": ["impegnato"],
-"contexts": ["casa"]
+"phrases": ["love vibes", "rosa rossa"],
+"synonyms": ["coppia omosessuale", "amore"],
+"moods": ["innamorato", "romantico",  "pride", "speciale"],
+"contexts": ["divano", "san valentino","🤵🏻","🌈", "👨‍❤️‍👨" ,"🕶️", "👓", "👔", "🌹","♥️"]
 },
 
 {
 "id": 5,
 "slug": "lipgallagher-reaction",
 "name": "Lip Gallagher reaction",
-"categories": ["Serie TV", "Meme"],
+"categories": ["horror"],
 "creators": ["Lipu"],
 "imageSource": "ai",
 "imageFile": "lipgallagher-reaction.jpg",
 "year": "2023",
 "month": "Ottobre",
-"gen": "GEN 3 HE",
+"gen": "GEN 3",
 "rarity": "Comune",
 "shareUrl": "https://tuodominio.it/reactions/eclissi-totale",
-"hiddenTags": ["hot", "momento intenso"],
+"hiddenTags": ["Zucca", "Occhiali"],
 "weightedTags": [
-{ "tag": "hot", "weight": 6 },
-{ "tag": "momento intenso", "weight": 7 }
+{ "tag": "Zucca", "weight": 10 },
+{ "tag": "Occhiali", "weight": 5 },
+{ "tag": "Posa strana", "weight": 7 }
 ],
-"phrases": ["situazione assurda"],
-"synonyms": ["allucinante"],
+"phrases": ["che.paura", "dolcetto o scherzetto?"],
+"synonyms": ["allucinante", "pauroso", "horror" ,"tenebre"],
 "moods": ["basito"],
-"contexts": ["serie tv"]
+"contexts": ["scenetta da serie tv horror", "halloween", "scenografia paurosa ma divertente", "pipistrello", "corona","🧛🏻","🦇","🎃", "👑", "🫅🏻"]
 }
 ]
 
