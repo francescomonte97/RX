@@ -6580,4 +6580,20 @@ button,
 }
 
 
-.
+
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.advice-float-avatar,
+.creator-modal-avatar-img,
+.advice-hub-avatar {
+  pointer-events: none;
+}
+
+
+
