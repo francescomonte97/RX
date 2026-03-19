@@ -16,7 +16,7 @@ export const state = {
 
   creatorExactMode: false,
 
-  // PRESET SYSTEM
+  
   presets: [],
   activePresetId: null
 };
@@ -32,6 +32,6 @@ export function resetStateFilters() {
 
   state.creatorExactMode = false;
 
-  // disattiva preset quando resetti
+  
   state.activePresetId = null;
 }
