@@ -15,7 +15,12 @@
   <meta name="apple-mobile-web-app-title" content="Reactiondex V2" />
 
   <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="stylesheet" href="./assets/css/creator-modal.css" />
+  <link rel="stylesheet" href="./assets/css/advice-hub.css" />
 </head>
+
+
+
 <body>
   <header class="app-header">
     <div class="header-ui">
@@ -300,22 +305,7 @@
     </div>
   </div>
 
-  <div class="install-prompt-overlay" id="installPromptOverlay" aria-hidden="true">
-    <div class="install-prompt-card">
-      <div class="install-prompt-topline">Reactiondex V2</div>
-      <h3>Installa l’app</h3>
-      <p>
-        Per un’esperienza più fluida puoi installare Reactiondex sulla schermata home del tuo dispositivo.
-      </p>
-
-      <div class="install-prompt-actions">
-        <button class="install-prompt-secondary" id="dismissInstallPromptBtn" type="button">
-          Più tardi
-        </button>
-        <button class="install-prompt-primary" id="confirmInstallPromptBtn" type="button">
-          Installa
-        </button>
-      </div>
+  
     </div>
   </div>
 
@@ -327,14 +317,14 @@
         </div>
 
         <div class="rx-insight-loading-copy" id="rxInsightLoadingCopy">
-          Sto leggendo il tuo caos interiore RX...
+          ...
         </div>
       </div>
 
       <div class="rx-insight-result" id="rxInsightResult" hidden>
         <div class="rx-insight-header rx-insight-header-single">
           <div class="rx-insight-heading-wrap">
-            <h3 id="rxInsightTitle">Drama Sniper</h3>
+            <h3 id="rxInsightTitle">...</h3>
           </div>
 
           <button
@@ -356,6 +346,101 @@
 
   <div id="statusToast" class="status-toast" aria-live="polite" aria-atomic="true"></div>
 
+
+
+<div class="advice-float" id="adviceFloat" aria-hidden="false">
+  <button
+    class="advice-float-btn"
+    id="adviceFloatBtn"
+    type="button"
+    aria-label="Apri Lipu's Advice"
+  >
+    <img
+      src="./assets/img/creators/lipu_av.jpg"
+      alt="Lipu"
+      class="advice-float-avatar"
+      draggable="false"
+    />
+  </button>
+</div>
+
+
+
+<div class="advice-hub-overlay" id="adviceHubOverlay" aria-hidden="true">
+  <div class="advice-hub-backdrop" id="adviceHubBackdrop"></div>
+
+  <div class="advice-hub-card" id="adviceHubCard" role="dialog" aria-modal="true">
+    <div class="advice-hub-header">
+      <img
+        src="./assets/img/creators/lipu_av.jpg"
+        class="advice-hub-avatar"
+        alt="Lipu"
+        draggable="false"
+      />
+
+      <div class="advice-hub-title">
+        <span class="gold">Solo un</span>
+        <span class="soft">consiglio</span>
+      </div>
+
+      <div class="advice-hub-tag">lipu's advice</div>
+
+      <button id="closeAdviceHubBtn" class="advice-hub-close" type="button">✕</button>
+    </div>
+
+    <div class="advice-hub-body" id="adviceHubBody"></div>
+  </div>
+</div>
+
+
+<div class="creator-modal-overlay" id="creatorModalOverlay" aria-hidden="true">
+  
+
+  <div class="creator-modal-backdrop" id="creatorModalBackdrop"></div>
+
+  
+  <div class="creator-modal-card" id="creatorModalCard" role="dialog" aria-modal="true">
+
+    
+    <div class="creator-modal-header">
+
+  
+      <img
+        class="creator-modal-avatar-img"
+        id="creatorModalAvatar"
+        src="./assets/img/creators/lipu_av.jpg"
+        alt="Creator avatar"
+        draggable="false"
+      />
+
+  
+      <div class="creator-modal-title">
+        <span class="creator-modal-title-gold">Solo un</span>
+        <span class="creator-modal-title-soft">consiglio</span>
+      </div>
+
+    
+      <div class="creator-modal-tag" id="creatorModalAdvice">
+        lipu's advice
+      </div>
+
+    </div>
+
+  
+    <div class="creator-modal-body">
+
+
+      <p class="creator-modal-text" id="creatorModalText"></p>
+
+<div class="creator-modal-actions" id="creatorModalActions"></div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
   <script type="module" src="./assets/js/app.js"></script>
 </body>
-</html>
+          </html>
