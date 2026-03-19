@@ -1,4 +1,4 @@
-const CACHE_NAME = "reactiondex-v8";
+const CACHE_NAME = "reactiondex-v2";
 
 const APP_SHELL = [
   "./",
@@ -6,6 +6,7 @@ const APP_SHELL = [
   "./manifest.webmanifest",
   "./assets/css/styles.css",
   "./assets/css/creator-modal.css",
+  "./assets/css/advice-hub.css",
   "./assets/js/app.js",
   "./assets/js/render.js",
   "./assets/js/filters.js",
@@ -15,7 +16,12 @@ const APP_SHELL = [
   "./assets/js/actions.js",
   "./assets/js/image-resolver.js",
   "./assets/js/reaction-service.js",
-  "./assets/js/hotlist-insights.js"
+  "./assets/js/hotlist-insights.js",
+  "./assets/js/advice-float.js",
+  "./assets/js/advice-hub-data.js",
+  "./assets/js/advice-hub.js",
+  "./assets/js/filter-info-data.js"
+  
 ];
 
 self.addEventListener("install", (event) => {
@@ -45,7 +51,7 @@ self.addEventListener("fetch", (event) => {
 
   const url = new URL(request.url);
 
-  
+
   if (request.mode === "navigate") {
     event.respondWith(
       fetch(request)
@@ -60,7 +66,7 @@ self.addEventListener("fetch", (event) => {
     );
     return;
   }
-  
+
   if (
     url.pathname.endsWith(".js") ||
     url.pathname.endsWith(".css") ||
@@ -84,7 +90,6 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  
   if (
     url.pathname.endsWith(".png") ||
     url.pathname.endsWith(".jpg") ||
