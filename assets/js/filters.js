@@ -32,6 +32,15 @@ const PRIMARY_CREATORS = [
   "Zane"
 ];
 
+
+
+export function getLatestReactions(reactions = [], limit = 50) {
+  return [...reactions]
+    .filter(r => r.createdAt)
+    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+    .slice(0, limit);
+}
+
 export function normalizeText(value = "") {
   return value
     .toLowerCase()
@@ -697,4 +706,4 @@ export function filterSemanticManual(reactions, state) {
       _confidence: confidence
     };
   });
-}
+    }
