@@ -1473,7 +1473,7 @@ function bindStatusInfoSwipeDismiss() {
     const dx = currentX - startX;
     const dy = currentY - startY;
 
-    // preferenza verticale, con un po' di laterale
+    
     if (Math.abs(dy) > 8 || Math.abs(dx) > 8) {
       e.preventDefault();
       pop.style.transform = `translate(-50%, -50%) translate(${dx * 0.35}px, ${Math.max(0, dy)}px) scale(0.98)`;
@@ -1638,6 +1638,14 @@ function bindLastVisitTracking() {
     }
   });
 }
+
+document.querySelectorAll("img").forEach(img => {
+  img.setAttribute("draggable", "false");
+
+  img.addEventListener("contextmenu", e => e.preventDefault());
+  img.addEventListener("dragstart", e => e.preventDefault());
+});
+
 
 /* ------------------------- INIT ------------------------- */
 
