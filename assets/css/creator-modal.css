@@ -1,0 +1,231 @@
+
+
+.creator-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.creator-modal-overlay.visible {
+  pointer-events: auto;
+}
+
+.creator-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 5, 8, 0.58);
+  backdrop-filter: blur(20px) saturate(1.15);
+  -webkit-backdrop-filter: blur(20px) saturate(1.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.creator-modal-overlay.visible .creator-modal-backdrop {
+  opacity: 1;
+}
+
+
+
+.creator-modal-card {
+  position: relative;
+  z-index: 2;
+  width: min(calc(100% - 36px), 370px);
+  border-radius: 26px;
+  padding: 28px 20px 22px;
+
+  background:
+    radial-gradient(circle at 50% -20%, rgba(255,0,85,0.08), transparent 60%),
+    linear-gradient(180deg, rgba(18,18,26,0.96), rgba(12,12,18,0.97));
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.56),
+    0 0 40px rgba(255,0,85,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+
+  transform: translateY(18px) scale(0.985);
+  opacity: 0;
+
+  transition:
+    transform 0.45s cubic-bezier(.18,.84,.22,1),
+    opacity 0.4s ease;
+}
+
+.creator-modal-overlay.visible .creator-modal-card {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+
+
+.creator-modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.creator-modal-avatar-img {
+  width: 96px;
+  height: 96px;
+  border-radius: 999px;
+  object-fit: cover;
+
+  margin-bottom: 18px;
+
+  border: 1px solid rgba(255,215,120,0.22);
+
+  box-shadow:
+    0 16px 36px rgba(255,0,85,0.14),
+    0 0 28px rgba(255,0,85,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+
+  opacity: 0;
+  transform: translateY(6px) scale(0.98);
+  transition: all 0.45s ease;
+}
+
+.creator-modal-overlay.visible .creator-modal-avatar-img {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+
+.creator-modal-title {
+  display: flex;
+  gap: 6px;
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 4px;
+
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all 0.4s ease 0.08s;
+}
+
+.creator-modal-overlay.visible .creator-modal-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.creator-modal-title-soft {
+  color: rgba(255,255,255,0.7);
+}
+
+.creator-modal-title-gold {
+  background: linear-gradient(180deg,#ffe9a8,#ffd35f,#c9961a);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 12px rgba(255,211,95,0.18);
+}
+
+
+.creator-modal-tag {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+
+  margin-bottom: 14px;
+
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all 0.35s ease 0.14s;
+}
+
+.creator-modal-overlay.visible .creator-modal-tag {
+  opacity: 0.6;
+  transform: translateY(0);
+}
+
+
+
+.creator-modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.creator-modal-text {
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.84);
+
+  max-width: 290px;
+  min-height: 72px;
+
+  white-space: normal;
+  word-break: break-word;
+}
+
+
+.creator-modal-text.is-typing::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  margin-left: 4px;
+  background: rgba(255,255,255,0.5);
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%,100% {opacity:0.2;}
+  50% {opacity:1;}
+}
+
+
+.creator-modal-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.4s ease 0.25s;
+}
+
+.creator-modal-overlay.visible .creator-modal-actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.creator-modal-primary,
+.creator-modal-secondary {
+  height: 48px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.creator-modal-primary {
+  border: 1px solid rgba(255,0,85,0.35);
+  background:
+    linear-gradient(180deg,rgba(255,0,85,0.25),rgba(255,0,85,0.12));
+  color: #fff;
+  font-weight: 800;
+}
+
+.creator-modal-secondary {
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.82);
+}
+
+.creator-modal-primary:active,
+.creator-modal-secondary:active {
+  transform: scale(0.98);
+}
+
+
+
+
+
+
