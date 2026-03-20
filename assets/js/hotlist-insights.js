@@ -1,6 +1,6 @@
 import { getFavoriteIds } from "./favorites.js";
 
-const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
+const HOTLIST_PROXY_URL = "https://rx.montefortefrancesco50.workers.dev/";
 
 /* ---------------- DATASET ---------------- */
 
@@ -23,65 +23,42 @@ function buildDataset(hotlist = []) {
 
 function buildPrompt(dataset) {
   return `
-
-Analizza la Hotlist delle reaction preferite dall'utente  e dai un feedback generando dei pattern dove possibile, max 50 parole, non usare markup, non usare parole chiave del dataset ma riformula tutto, usa il termine reaction e non usare mai "reazioni" o "reazione". linguaggio tecnico e psicologico, non ripetere mai le stesse parole. non dare mai del tu all'utente.
-
-
-Dataset:
-${dataset}
+Analizza la Hotlist delle reaction preferite dall'utente e dai un feedback generando dei pattern dove possibile, max 50 parole, non usare markup, non usare parole chiave del dataset ma riformula tutto, usa il termine reaction e non usare mai "reazioni" o "reazione". Linguaggio tecnico e psicologico, non ripetere mai le stesse parole. Non dare mai del tu all'utente.
 
 Dataset:
 ${JSON.stringify(dataset, null, 2)}
 `.trim();
 }
 
-/* ---------------- OPENROUTER ---------------- */
+/* ---------------- PROXY WORKER ---------------- */
 
-async function askOpenRouter(prompt) {
-  const key = "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";
-
-  if (!key) {
-    throw new Error("OpenRouter API key mancante");
-  }
-
-  const res = await fetch(OPENROUTER_URL, {
+async function askHotlistProxy(prompt) {
+  const res = await fetch(HOTLIST_PROXY_URL, {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${key}`,
-      "Content-Type": "application/json",
-      "HTTP-Referer": window.location.origin,
-      "X-Title": "ReactionDEX"
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify({
-      model: "openrouter/auto",
-      messages: [
-        {
-          role: "user",
-          content: prompt
-        }
-      ],
-      temperature: 0.9
-    })
+    body: JSON.stringify({ prompt })
   });
 
   const rawText = await res.text();
 
   if (!res.ok) {
-    throw new Error(rawText || "Errore OpenRouter");
+    throw new Error(rawText || "Errore proxy");
   }
 
-  let jsonResponse;
-
+  let data;
   try {
-    jsonResponse = JSON.parse(rawText);
+    data = JSON.parse(rawText);
   } catch {
-    throw new Error("Risposta OpenRouter non leggibile");
+    throw new Error("Risposta proxy non leggibile");
   }
 
-  const content = jsonResponse?.choices?.[0]?.message?.content;
+  const content = data?.choices?.[0]?.message?.content;
 
   if (!content) {
-    throw new Error("Risposta OpenRouter vuota");
+    if (data?.identity_text) return data;
+    throw new Error("Risposta proxy vuota");
   }
 
   const cleaned = String(content)
@@ -101,14 +78,12 @@ async function askOpenRouter(prompt) {
         return JSON.parse(match[0]);
       } catch {
         return {
-        
           identity_text: cleaned
         };
       }
     }
 
     return {
-      
       identity_text: cleaned
     };
   }
@@ -140,15 +115,6 @@ function buildLocalHotlistIdentity(hotlist = []) {
   const topCreators = getTopItems(creators, 3);
   const topMoods = getTopItems(moods, 3);
   const topContexts = getTopItems(contexts, 3);
-  const topTags = getTopItems(tags, 4);
-
-  const chaosSignals = ["caos", "shock", "dramma", "evento assurdo", "momento intenso", "rissa", "casino"];
-  const ironicSignals = ["ridicolo", "clown", "figuraccia", "imbarazzante", "grottesco"];
-
-  const hasChaos = topTags.some((tag) => chaosSignals.includes(String(tag).toLowerCase()));
-  const hasIrony = topTags.some((tag) => ironicSignals.includes(String(tag).toLowerCase()));
-
-  
 
   const creatorsText = topCreators.length ? topCreators.join(", ") : "creator vari";
   const moodText = topMoods[0] || "scene emotivamente instabili";
@@ -157,9 +123,9 @@ function buildLocalHotlistIdentity(hotlist = []) {
   return {
     source: "local",
     identity_text:
-      `Guardando la tua Hotlist si capisce subito che tu non perdi tempo con reaction educate o troppo composte. ` +
-      `Tu vuoi facce che crollano bene, scene che si inclinano male e quell'energia da "${moodText}" che arriva quando ${contextText} prende il sopravvento. ` +
-      `Hai chiaramente un debole per ${creatorsText}, cioè gente che sa offrire il tipo di caos che non si dimentica in fretta.`
+      `Guardando la Hotlist emerge una preferenza chiara per reaction poco composte e ad alta intensità. ` +
+      `Si nota una tendenza verso scene con energia da "${moodText}" che si attiva quando ${contextText} prende il sopravvento. ` +
+      `La ricorrenza di ${creatorsText} suggerisce una ricerca costante di impatto e caos memorabile.`
   };
 }
 
@@ -176,14 +142,14 @@ export async function analyzeHotlistIdentity(allReactions = []) {
   const prompt = buildPrompt(dataset);
 
   try {
-    const result = await askOpenRouter(prompt);
+    const result = await askHotlistProxy(prompt);
 
     return {
       source: "openrouter",
       archetype: result?.archetype || "RX Identity",
       identity_text:
         result?.identity_text ||
-        "Tu e il caos visivo avete chiaramente firmato un patto non scritto."
+        "Il profilo della Hotlist mostra una preferenza netta per reaction ad alta intensità visiva."
     };
   } catch (error) {
     console.warn("RX Identity fallback locale:", error);
