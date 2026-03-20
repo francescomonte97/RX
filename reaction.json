@@ -12,7 +12,6 @@
 "month": "Ottobre",
 "gen": "GEN 1",
 "rarity": "Popolare",
-"shareUrl": "https://francescomonte97.github.io/RX/r/salumieri-reaction.html",
 "hiddenTags": ["Prosciutto", "Macelleria", "Situazione strana", "Momento Comico", "Gruppo di persone", "Macellai", "divertente", "spensieratezza"],
 "weightedTags": [
 { "tag": "Prosciutto", "weight": 10 },
@@ -43,7 +42,6 @@
 "month": "Aprile",
 "gen": "GEN 1",
 "rarity": "Comune",
-"shareUrl": "https://tuodominio.it/reactions/eclissi-totale",
 "hiddenTags": ["Cuffiette", "Auricolari", "Puntare il dito", "Lampadario", "Sguardo"],
 "weightedTags": [
 { "tag": "Cuffiette", "weight": 9 },
@@ -73,7 +71,6 @@
 "month": "Ottobre",
 "gen": "GEN 1",
 "rarity": "Iconica",
-"shareUrl": "https://tuodominio.it/reactions/eclissi-totale",
 "hiddenTags": ["hot", "momento intenso", "strano"],
 "weightedTags": [
 { "tag": "hot", "weight": 6 },
@@ -99,7 +96,6 @@
 "month": "Gennaio",
 "gen": "GEN 4",
 "rarity": "Iconica",
-"shareUrl": "https://reactiondex.it/reactions/onlove-reaction.webp",
 "hiddenTags": ["hot", "momento intenso", "giacca", "eleganza"],
 "weightedTags": [
 { "tag": "hot", "weight": 4 },
@@ -126,7 +122,6 @@
 "month": "Ottobre",
 "gen": "GEN 3",
 "rarity": "Comune",
-"shareUrl": "https://tuodominio.it/reactions/eclissi-totale",
 "hiddenTags": ["Zucca", "Occhiali"],
 "weightedTags": [
 { "tag": "Zucca", "weight": 10 },
@@ -137,6 +132,69 @@
 "synonyms": ["allucinante", "pauroso", "horror" ,"tenebre"],
 "moods": ["basito"],
 "contexts": ["scenetta da serie tv horror", "halloween", "scenografia paurosa ma divertente", "pipistrello", "corona","🧛🏻","🦇","🎃", "👑", "🫅🏻"]
+},
+
+{
+  "id": 6,
+  "slug": "a-siga-reaction",
+  "name": "A' siga reaction",
+  "categories": ["Meme", "Comica"],
+  "creators": ["Lussu"],
+  "imageSource": "real",
+  "createdAt": "2026-03-20T12:00:00",
+  "imageFile": "a-siga-reaction.webp",
+  "year": "2020",
+  "month": "Luglio",
+  "gen": "GEN 1",
+  "rarity": "Comune",
+  "hiddenTags": [
+    "Sigaretta",
+    "Espressione perplessa",
+    "Segno con la mano",
+    "Selfie",
+    "Orecchino",
+    "Barba",
+    "Sguardo confuso"
+  ],
+  "weightedTags": [
+    { "tag": "Sigaretta", "weight": 10 },
+    { "tag": "Espressione perplessa", "weight": 9 },
+    { "tag": "Segno con la mano", "weight": 8 },
+    { "tag": "Selfie", "weight": 7 },
+    { "tag": "Orecchino", "weight": 6 },
+    { "tag": "Barba", "weight": 6 },
+    { "tag": "Sguardo confuso", "weight": 9 }
+  ],
+  "phrases": [
+    "a' siga",
+    "ma che sta succedendo",
+    "io in questo momento",
+    "bro tutto ok?"
+  ],
+  "synonyms": [
+    "confuso",
+    "basito",
+    "perplesso",
+    "assurdo",
+    "meme reaction"
+  ],
+  "moods": [
+    "Basito",
+    "Comico",
+    "Perplesso"
+  ],
+  "contexts": [
+    "Selfie",
+    "Interno",
+    "Momento random",
+    "🚬",
+    "🤨",
+    "✌️",
+    "📸"
+  ]
 }
+
+
+  
 ]
 
