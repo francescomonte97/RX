@@ -188,11 +188,7 @@ export const ADVICE_SECTIONS = [
         title: "Costruisci una Hotlist utile",
         text: "La Hotlist non dovrebbe contenere solo reaction belle: dovrebbe contenere reaction che usi davvero. Più è concreta, più diventa uno strumento e meno una semplice raccolta. Una buona Hotlist serve a recuperare velocemente il tuo gusto operativo."
       },
-      {
-        id: "analysis",
-        title: "Sblocca l'analisi",
-        text: "Con almeno 3 reaction in Hotlist puoi ottenere una lettura più interpretativa del tuo gusto. Non è solo una curiosità: può aiutarti a capire i pattern che tendi a cercare, e quindi anche a cercare meglio in futuro."
-      },
+    
       {
         id: "rotate-hotlist",
         title: "Aggiornala spesso",
