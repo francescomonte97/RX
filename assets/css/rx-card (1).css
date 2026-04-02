@@ -1,0 +1,350 @@
+/* =========================
+   SECRET REACTIONS
+   ========================= */
+
+.card.is-secret-card {
+  position: relative;
+}
+
+.card.is-secret-card .img-slot {
+  position: relative;
+  overflow: hidden;
+}
+
+.card.is-secret-card .img-slot img {
+  filter: blur(18px) brightness(0.42);
+  transform: scale(1.04);
+}
+
+.card.is-secret-card .card-title,
+.card.is-secret-card .pill,
+.card.is-secret-card .meta-row,
+.card.is-secret-card .card-actions,
+.card.is-secret-card .card-copy,
+.card.is-secret-card .card-subtitle,
+.card.is-secret-card .card-name {
+  filter: blur(8px);
+  opacity: 0.72;
+}
+
+.rx-secret-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.06), transparent 55%),
+    rgba(6, 6, 10, 0.18);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.rx-secret-badge {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.44);
+  border: 1px solid rgba(255,255,255,0.11);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  box-shadow:
+    0 10px 20px rgba(0,0,0,0.24),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.rx-secret-hint {
+  max-width: 220px;
+  color: rgba(255,255,255,0.78);
+  font-size: 12px;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+.rx-secret-unlock-btn {
+  min-width: 158px;
+  height: 40px;
+  border: none;
+  border-radius: 999px;
+  padding: 0 16px;
+  background: linear-gradient(180deg, #ff1b54, #ff003c);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 10px 20px rgba(255,0,60,0.16);
+  transition:
+    transform 0.16s ease,
+    filter 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.rx-secret-unlock-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+.rx-secret-unlock-btn:active {
+  transform: translateY(1px) scale(0.985);
+}
+
+/* =========================
+   RX CARD MODAL
+   ========================= */
+
+.rx-card-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 15000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(0,0,0,0.58);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.rx-card-overlay.visible {
+  display: flex;
+}
+
+.rx-card-modal {
+  position: relative;
+  width: min(390px, 100%);
+  border-radius: 24px;
+  padding: 18px 18px 16px;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(255, 0, 85, 0.08), transparent 55%),
+    linear-gradient(180deg, rgba(18,18,26,0.96), rgba(11,11,16,0.98));
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 28px 70px rgba(0,0,0,0.5),
+    0 0 28px rgba(255,0,85,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.rx-card-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)),
+    rgba(18,18,24,0.88);
+  color: rgba(255,255,255,0.84);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.rx-card-kicker {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.36);
+  margin-bottom: 10px;
+}
+
+.rx-card-title {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.rx-card-text {
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 14px;
+}
+
+.rx-card-status {
+  min-height: 44px;
+  padding: 12px 13px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.07);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015)),
+    rgba(255,255,255,0.02);
+  font-size: 12px;
+  line-height: 1.45;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 14px;
+}
+
+.rx-card-status[data-tone="pending"] {
+  border-color: rgba(255, 200, 70, 0.18);
+  color: rgba(255, 235, 185, 0.95);
+}
+
+.rx-card-status[data-tone="success"] {
+  border-color: rgba(70, 210, 120, 0.18);
+  color: rgba(205, 255, 220, 0.95);
+}
+
+.rx-card-status[data-tone="error"] {
+  border-color: rgba(255, 80, 80, 0.18);
+  color: rgba(255, 205, 205, 0.95);
+}
+
+.rx-card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.rx-card-btn {
+  flex: 1;
+  height: 42px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+}
+
+.rx-card-btn-secondary {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)),
+    rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.86);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.rx-card-btn-primary {
+  background: linear-gradient(180deg, #ff1b54, #ff003c);
+  color: #fff;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 10px 20px rgba(255,0,60,0.16);
+}
+
+@media (max-width: 480px) {
+  .rx-card-modal {
+    width: calc(100% - 20px);
+    border-radius: 22px;
+    padding: 16px 16px 14px;
+  }
+
+  .rx-card-title {
+    font-size: 20px;
+  }
+
+  .rx-secret-unlock-btn {
+    min-width: 146px;
+  }
+}
+
+
+.card.is-secret-card .card-actions button,
+.card.is-secret-card .card-actions a,
+.card.is-secret-card [data-action] {
+  opacity: 0.45;
+  filter: grayscale(1);
+}
+
+.card.is-secret-card .card-actions button:hover,
+.card.is-secret-card .card-actions a:hover,
+.card.is-secret-card [data-action]:hover {
+  transform: none;
+}
+
+
+
+
+
+
+
+/* BASE */
+.rx-scan-icon {
+  width: 110px;
+  height: 110px;
+  color: #f6c35b;
+}
+
+/* STROKE uniforme */
+.rx-scan-icon path,
+.rx-scan-icon circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.rx-core {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* === SHINE ELEGANTE === */
+.rx-scan-icon {
+  position: relative;
+}
+
+.rx-scan-icon::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(
+    120deg,
+    transparent 35%,
+    rgba(255,255,255,0.5) 50%,
+    transparent 65%
+  );
+  transform: translateX(-120%);
+  animation: rxShine 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes rxShine {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* === CORNER SCAN (leggero pulse) === */
+.rx-corner {
+  opacity: 0.5;
+  animation: rxCornerPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes rxCornerPulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+
+
+
