@@ -329,7 +329,131 @@
     "🍷",
     "😌"
   ]
-}
+},
+
+
+  {
+  "id": 9,
+  "slug": "fe-zzz-reaction",
+  "name": "FEZzz reaction",
+  "categories": ["Meme", "Comica"],
+  "creators": ["Fez"],
+  "imageSource": "real",
+  "createdAt": "2026-04-03T12:15:00",
+  "imageFile": "fezzz-reaction.webp",
+  "year": "2020",
+  "month": "Agosto",
+  "gen": "GEN 1",
+  "rarity": "Iconica",
+  "hiddenTags": [
+    "Stanco",
+    "Occhiali",
+    "Bar",
+    "Volto rilassato",
+    "Espressione neutra",
+    "Notte",
+    "Primo piano",
+    "Low energy"
+  ],
+  "weightedTags": [
+    { "tag": "Stanco", "weight": 10 },
+    { "tag": "Zzz", "weight": 10 },
+    { "tag": "Occhiali", "weight": 7 },
+    { "tag": "Bar", "weight": 6 },
+    { "tag": "Espressione neutra", "weight": 8 },
+    { "tag": "Notte", "weight": 7 },
+    { "tag": "Low energy", "weight": 9 },
+    { "tag": "Primo piano", "weight": 6 }
+  ],
+  "phrases": [
+    "sto morendo di sonno",
+    "modalità risparmio energetico",
+    "non ce la faccio più",
+    "zzz"
+  ],
+  "synonyms": [
+    "stremato",
+    "assonnato",
+    "scarico",
+    "spento"
+  ],
+  "moods": [
+    "Stanco",
+    "Apatico",
+    "Rilassato"
+  ],
+  "contexts": [
+    "Bar",
+    "Serata lunga",
+    "Fine giornata",
+    "Momento morto",
+    "😴",
+    "☕",
+    "🌙",
+    "📸"
+  ]
+    },
+  {
+  "id": 10,
+  "slug": "scappelati-reaction",
+  "name": "Scappelati reaction",
+  "categories": ["Gruppo", "Meme", "Comica"],
+  "creators": ["Fez", "Lussu"],
+  "imageSource": "real",
+  "createdAt": "2026-04-03T12:20:00",
+  "imageFile": "scappelati-reaction.webp",
+  "year": "2022",
+  "month": "Novembre",
+  "gen": "GEN 3",
+  "rarity": "Popolare",
+  "hiddenTags": [
+    "Taglio di capelli",
+    "Paolo",
+    "Vista di lato",
+    "Due persone",
+    "Barbiere vibe",
+    "Orecchino",
+    "Occhiali",
+    "Interno locale"
+  ],
+  "weightedTags": [
+    { "tag": "Taglio di capelli", "weight": 10 },
+    { "tag": "Paolo", "weight": 10 },
+    { "tag": "Due persone", "weight": 8 },
+    { "tag": "Vista di lato", "weight": 7 },
+    { "tag": "Barbiere vibe", "weight": 9 },
+    { "tag": "Orecchino", "weight": 6 },
+    { "tag": "Occhiali", "weight": 6 },
+    { "tag": "Interno locale", "weight": 7 }
+  ],
+  "phrases": [
+    "taglio fresh",
+    "appena usciti dal barbiere",
+    "clean fade",
+    "troppo puliti"
+  ],
+  "synonyms": [
+    "fresh",
+    "pulito",
+    "curato",
+    "stiloso"
+  ],
+  "moods": [
+    "Sicuro di sé",
+    "Comico",
+    "Leggero"
+  ],
+  "contexts": [
+    "Barbiere",
+    "Locale",
+    "Da Paolo",
+    "Flex tra amici",
+    "💈",
+    "✂️",
+    "😎",
+    "🔥"
+  ]
+  }
   
 ]
 
