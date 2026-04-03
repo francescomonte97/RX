@@ -202,7 +202,71 @@
     "📸"
   ]
 }
+,
 
+{
+  "id": 7,
+  "slug": "e-una-festa-reaction",
+  "name": "È una festa reaction",
+  "categories": ["meme", "comica"],
+  "creators": ["Lipu"],
+  "imageSource": "real",
+  "createdAt": "2026-04-03T12:00:00",
+  "imageFile": "e-una-festa-reaction.webp",
+  "year": "2023",
+  "month": "Maggio",
+  "gen": "GEN 3",
+  "rarity": "Iconica",
+  "hiddenTags": [
+    "Occhiali da vista",
+    "Sorriso inquietante",
+    "Festa",
+    "Coriandoli",
+    "Primo piano",
+    "Espressione esagerata",
+    "Euforia",
+    "Volto inclinato"
+  ],
+  "weightedTags": [
+    { "tag": "Occhiali da vista", "weight": 10 },
+    { "tag": "Sorriso inquietante", "weight": 9 },
+    { "tag": "Festa", "weight": 10 },
+    { "tag": "Coriandoli", "weight": 8 },
+    { "tag": "Primo piano", "weight": 7 },
+    { "tag": "Espressione esagerata", "weight": 9 },
+    { "tag": "Euforia", "weight": 8 },
+    { "tag": "Volto inclinato", "weight": 6 }
+  ],
+  "phrases": [
+    "è una festa",
+    "quando parte il delirio",
+    "io totalmente fuori contesto",
+    "che vibe assurda"
+  ],
+  "synonyms": [
+    "assurdo",
+    "allucinante",
+    "caotico",
+    "fuori controllo",
+    "party mood"
+  ],
+  "moods": [
+    "Comico",
+    "Surreale",
+    "Caotico"
+  ],
+  "contexts": [
+    "Party",
+    "Meme reaction",
+    "Primo piano",
+    "Momento assurdo",
+    "🎉",
+    "🥳",
+    "🤓",
+    "😵‍💫"
+  ]
+}
+  
 
   
 ]
