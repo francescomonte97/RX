@@ -268,9 +268,68 @@
     "🤓",
     "😵‍💫"
   ]
+},
+{
+  "id": 8,
+  "slug": "carezza-reaction",
+  "name": "Carezza reaction",
+  "categories": ["Coppia", "Meme"],
+  "creators": ["Fez, Min"],
+  "imageSource": "real",
+  "createdAt": "2026-04-03T12:10:00",
+  "imageFile": "carezza-reaction.webp",
+  "year": "2025",
+  "month": "Dicembre",
+  "gen": "GEN 5",
+  "rarity": "Comune",
+  "hiddenTags": [
+    "Carezza",
+    "Mano sulla spalla",
+    "Occhiali",
+    "Barba",
+    "Momento tranquillo",
+    "Tavola",
+    "Bicchiere",
+    "Situazione sociale"
+  ],
+  "weightedTags": [
+    { "tag": "Carezza", "weight": 10 },
+    { "tag": "Mano sulla spalla", "weight": 10 },
+    { "tag": "Momento tranquillo", "weight": 8 },
+    { "tag": "Situazione sociale", "weight": 7 },
+    { "tag": "Occhiali", "weight": 6 },
+    { "tag": "Barba", "weight": 5 },
+    { "tag": "Tavola", "weight": 7 },
+    { "tag": "Bicchiere", "weight": 6 }
+  ],
+  "phrases": [
+    "tranquillo bro",
+    "ci sono io",
+    "tutto ok",
+    "calma un attimo"
+  ],
+  "synonyms": [
+    "supporto",
+    "rassicurante",
+    "gentilezza",
+    "vicinanza"
+  ],
+  "moods": [
+    "Rassicurante",
+    "Calmo",
+    "Empatico"
+  ],
+  "contexts": [
+    "Cena",
+    "Momento tra amici",
+    "Situazione delicata",
+    "Interno",
+    "🤝",
+    "🫂",
+    "🍷",
+    "😌"
+  ]
 }
-  
-
   
 ]
 
