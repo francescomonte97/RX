@@ -1,4 +1,4 @@
-const CACHE_NAME = "reactiondex-v2.4";
+const CACHE_NAME = "reactiondex-v2.5";
 
 const APP_SHELL = [
   "./",
