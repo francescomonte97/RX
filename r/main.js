@@ -639,7 +639,7 @@ function removeLIPULoadingMessage() {
 
 function createAvatar() {
   const avatar = document.createElement('img');
-  avatar.src = './lipu-profile.png';
+  avatar.src = './IMG_20260407_035111.jpg ';
   avatar.alt = 'LIPU';
   avatar.className = 'message-avatar';
   return avatar;
