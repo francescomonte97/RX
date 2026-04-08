@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work in Progress</title>
+  <style>
+    :root{
+      --bg:#050505;
+      --panel:#111111;
+      --text:#f5f5f5;
+      --muted:#bdbdbd;
+      --accent:#d4af37;
+      --border:rgba(255,255,255,0.08);
+      --shadow:0 20px 60px rgba(0,0,0,0.45);
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:
+        radial-gradient(circle at top, rgba(212,175,55,0.10), transparent 30%),
+        linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+      color:var(--text);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      padding:32px;
+    }
+
+    .card{
+      width:min(920px, 100%);
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:56px 40px;
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(6px);
+      text-align:center;
+    }
+
+    .badge{
+      display:inline-block;
+      padding:8px 14px;
+      border:1px solid rgba(212,175,55,0.35);
+      border-radius:999px;
+      color:var(--accent);
+      font-size:0.82rem;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      margin-bottom:22px;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(2.2rem, 7vw, 4.8rem);
+      font-weight:700;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+    }
+
+    p{
+      margin:18px auto 0;
+      max-width:640px;
+      color:var(--muted);
+      font-size:1.05rem;
+      line-height:1.7;
+    }
+
+    .image-slot{
+      margin-top:40px;
+      border:1px dashed rgba(255,255,255,0.18);
+      border-radius:20px;
+      min-height:320px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    }
+
+    .image-slot img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:cover;
+    }
+
+    .placeholder{
+      padding:24px;
+      color:#8f8f8f;
+      font-size:0.98rem;
+      letter-spacing:0.03em;
+    }
+
+    .footer-note{
+      margin-top:18px;
+      font-size:0.9rem;
+      color:#7d7d7d;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="badge">Coming Soon</div>
+    <h1>Lip in Progress...</h1>
+    <p>
+     Il Ministro sta preparando qualcosa di nuovo per il clone di Lip.
+    </p>
+
+    <section class="image-slot">
+      <div class="placeholder">
+
+        
+<img src="solo_uno.jpg" alt="Lipu che fa il gesto 'Solo uno'">
+    
+
+        
+      </div>
+
+    
+      
+    </section>
+
+    <div class="footer-note">
+      Parallels by Min | 2026 
+    </div>
+  </main>
+</body>
+</html>
